@@ -1,5 +1,41 @@
 <html>
     <head>
-        <title></title>
+        <title>real time popup</title>
     </head>
+    <body>
+        <form action="submit" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            function validateForm(){
+                let valid=true;
+                let name=document.getElementById("name").value;
+                if(name===""){
+                    alert("name is required");
+                    valid=false;
+                }
+                let email=document.getElementById("email").value;
+                if(email===""){
+                    alert("email is required");
+                    valid=false;
+                }
+                let password=document.getElementById("password").value;
+                if(password===""){
+                    alert("password is required");
+                    valid=false;
+                }
+                if(valid){
+                    alert("form submitted successfully");
+                    return true;
+                }
+                return false;
+            }
+        </script>
+    </body>
 </html>
