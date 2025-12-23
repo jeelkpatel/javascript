@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>validation</title>
+    </head>
+    <body>
+        <form onsubmit="return validateForm()">
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Login</button>
+        </form>
+        <script>
+            function validateForm(){
+                let email=document.getElementById("email").value;
+                let password=document.getElementById("password").value;
+
+                let emailpattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                if(!emailpattern.test(email)){
+                    alert("invalid email address");
+                    return false;
+                }
+                if (password.length < 6){
+                    alert("password must be at least 6 characters long");
+                    return false;
+                }
+                alert("form submitted successfully");
+                return true;
+            }
+        </script>
+    </body>
+</html>

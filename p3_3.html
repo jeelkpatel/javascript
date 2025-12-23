@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>palindrome</title>
+    </head>
+    <body>
+        <script>
+            let str = prompt("enter a string");
+            let rev = str.split('').reverse().join('');
+            if(str === rev){
+                document.write(`${str} is a palindrome<br>`);
+            }
+            else{
+                document.write(`${str} is not a palindrome<br>`);
+            }
+        </script>
+    </body>
+</html>
